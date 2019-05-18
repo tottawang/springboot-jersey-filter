@@ -22,12 +22,17 @@ public class RestResource {
    */
   @Context
   public void initWithServletContext(ServletContext context) {
-    System.out.println("contect injection is applied");    
+    System.out.println("contect injection is applied");
+    
+    // this is to verify that when exception is thrown in the process of jersey resource class context injection
+    // the exception will be suppressed if AOP is involved in the resource class. For more details, please refer 
+    // to SpringComponentProvider.SpringManagedBeanFactory.provide implementation
+    throw new RuntimeException();
   }
 
   @POST
   @Path("test")
-  @CustomAnnotation(name = "sendRequest")
+  @CustomAnnotation(name = "sendRequestName", value="sendRequestValue")
   public String sendRequest(SampleRequest sampleRequest) {
     return sampleRequest.getName();
   }

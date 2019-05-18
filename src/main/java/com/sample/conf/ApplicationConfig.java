@@ -12,8 +12,8 @@ public class ApplicationConfig extends ResourceConfig {
 
   public ApplicationConfig() {
     packages("com.sample.resources");
-    this.register(JerseyFirstLevelFilter.class);
-    this.register(JerseySecondLevelFilter.class);
+    //this.register(JerseyFirstLevelFilter.class);
+    //this.register(JerseySecondLevelFilter.class);
   }
 
   @Bean

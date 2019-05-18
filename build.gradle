@@ -63,6 +63,7 @@ configurations.all {
 }
 
 dependencies {
+    compile group: 'org.glassfish.jersey.ext', name: 'jersey-spring3', version: '2.25.1'
 	compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
 	compile("org.springframework.boot:spring-boot-starter-integration:${springBootVersion}")
 	compile("org.springframework.boot:spring-boot-starter-jersey:${springBootVersion}")
